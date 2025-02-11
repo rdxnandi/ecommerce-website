@@ -34,7 +34,7 @@ function Checkout() {
           placeholder="Full Name"
           onChange={handleChange}
           required
-          className="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
+          className="w-full p-3 border rounded-xl focus:outline-hidden focus:ring-2 focus:ring-gray-500"
         />
         <input
           type="email"
@@ -42,7 +42,7 @@ function Checkout() {
           placeholder="Email"
           onChange={handleChange}
           required
-          className="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
+          className="w-full p-3 border rounded-xl focus:outline-hidden focus:ring-2 focus:ring-gray-500"
         />
         <input
           type="text"
@@ -50,7 +50,7 @@ function Checkout() {
           placeholder="Address"
           onChange={handleChange}
           required
-          className="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
+          className="w-full p-3 border rounded-xl focus:outline-hidden focus:ring-2 focus:ring-gray-500"
         />
         <div className="flex space-x-4">
           <input
@@ -59,7 +59,7 @@ function Checkout() {
             placeholder="City"
             onChange={handleChange}
             required
-            className="w-1/2 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="w-1/2 p-3 border rounded-xl focus:outline-hidden focus:ring-2 focus:ring-gray-500"
           />
           <input
             type="text"
@@ -67,7 +67,7 @@ function Checkout() {
             placeholder="ZIP Code"
             onChange={handleChange}
             required
-            className="w-1/2 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="w-1/2 p-3 border rounded-xl focus:outline-hidden focus:ring-2 focus:ring-gray-500"
           />
         </div>
 
@@ -78,7 +78,7 @@ function Checkout() {
           placeholder="Card Number"
           onChange={handleChange}
           required
-          className="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
+          className="w-full p-3 border rounded-xl focus:outline-hidden focus:ring-2 focus:ring-gray-500"
         />
         <div className="flex space-x-4">
           <input
@@ -87,7 +87,7 @@ function Checkout() {
             placeholder="MM/YY"
             onChange={handleChange}
             required
-            className="w-1/2 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="w-1/2 p-3 border rounded-xl focus:outline-hidden focus:ring-2 focus:ring-gray-500"
           />
           <input
             type="text"
@@ -95,7 +95,7 @@ function Checkout() {
             placeholder="CVV"
             onChange={handleChange}
             required
-            className="w-1/2 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="w-1/2 p-3 border rounded-xl focus:outline-hidden focus:ring-2 focus:ring-gray-500"
           />
         </div>
 

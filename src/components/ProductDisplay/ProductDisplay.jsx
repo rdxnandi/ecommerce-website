@@ -45,19 +45,19 @@ function ProductDisplay(props) {
             Select Size
           </h1>
           <div className="flex mx-0 my-7 gap-5">
-            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-sm cursor-pointer">
+            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-xs cursor-pointer">
               S
             </div>
-            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-sm cursor-pointer">
+            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-xs cursor-pointer">
               M
             </div>
-            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-sm cursor-pointer">
+            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-xs cursor-pointer">
               L
             </div>
-            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-sm cursor-pointer">
+            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-xs cursor-pointer">
               Xl
             </div>
-            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-sm cursor-pointer">
+            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-xs cursor-pointer">
               XXl
             </div>
           </div>

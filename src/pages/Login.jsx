@@ -11,13 +11,13 @@ function LoinSignup() {
             type="email"
             placeholder="Email"
             required
-            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-none text-[#5c5c5c] text-xl"
+            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
           />
           <input
             type="password"
             placeholder="Password"
             required
-            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-none text-[#5c5c5c] text-xl"
+            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
           />
         </div>
         <button className="w-full h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-2xl uppercase">

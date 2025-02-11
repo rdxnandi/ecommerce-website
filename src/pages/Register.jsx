@@ -10,25 +10,25 @@ function Register() {
             type="text"
             placeholder="Name"
             required
-            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-none text-[#5c5c5c] text-xl"
+            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
           />
           <input
             type="email"
             placeholder="Email"
             required
-            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-none text-[#5c5c5c] text-xl"
+            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
           />
           <input
             type="password"
             placeholder="Create Password"
             required
-            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-none text-[#5c5c5c] text-xl"
+            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
           />
           <input
             type="password"
             placeholder="Confirm Password"
             required
-            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-none text-[#5c5c5c] text-xl"
+            className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
           />
         </div>
         <div className="flex gap-3 mt-5">

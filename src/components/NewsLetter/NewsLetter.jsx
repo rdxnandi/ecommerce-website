@@ -13,7 +13,7 @@ function NewsLetter() {
         <input
           type="email"
           placeholder="Your Email id"
-          className="w-[500px] outline-none ml-7 text-[#616161] text-xl"
+          className="w-[500px] outline-hidden ml-7 text-[#616161] text-xl"
         />
         <button className="w-52 h-full rounded-full bg-black text-white text-xl">
           Subscribe

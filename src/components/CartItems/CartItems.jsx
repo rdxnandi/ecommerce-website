@@ -85,7 +85,7 @@ function CartItems() {
               value={promoCode}
               onChange={handlePromoChange}
               placeholder="promo code"
-              className="outline-none text-xm w-[330px] h-[50px] bg-transparent text-gray-500"
+              className="outline-hidden text-xm w-[330px] h-[50px] bg-transparent text-gray-500"
             />
             <button className="w-40 h-14 text-xm bg-black text-white">
               Submit
