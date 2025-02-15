@@ -11,6 +11,7 @@ function Navbar() {
   const { getTotalCartItems } = useContext(ShopContext);
   const navigate = useNavigate();
   const { user, setUser } = useAuth();
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleLogout = async () => {
     await account.deleteSession("current");
@@ -70,9 +71,30 @@ function Navbar() {
           )}
         </li>
       </ul>
-      <div className="hidden lg:flex lg:items-center lg:gap-11">
+      <div className="hidden lg:flex lg:items-center lg:gap-11 relative">
         {user ? (
-          <button onClick={handleLogout}>Logout</button>
+          <>
+            <button
+              className="border-2 border-blue-500 w-10 h-10 rounded-full cursor-pointer bg-gray-300 font-bold text-[#414141]"
+              onClick={() => setShowDropdown(!showDropdown)}
+            >
+              {user.name ? user.name.charAt(0).toUpperCase() : "U"}
+            </button>
+
+            {showDropdown && (
+              <div className="absolute right-0 top-20 bg-white shadow-lg p-2 rounded-md">
+                <p className="font-bold text-lg">{user.name}</p>
+                <p className="text-lg text-gray-600">{user.email}</p>
+                <hr className="my-2" />
+                <button
+                  className="border border-gray-400 px-4 py-1 rounded cursor-pointer"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </div>
+            )}
+          </>
         ) : (
           <Link to="/login">
             <button className="w-36 h-12 border border-[#7a7a7a] rounded-[75px] text-[#515151] text-xl active:bg-[#f3f3f3]">

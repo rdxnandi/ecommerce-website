@@ -27,8 +27,8 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="flex-1 flex items-center justify-center">
-        <img src={hero_image} alt={hero_image} className="w-[400px]" />
+      <div className="flex-1 flex">
+        <img src={hero_image} alt={hero_image} className="w-[450px]" />
       </div>
     </div>
   );
