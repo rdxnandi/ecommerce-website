@@ -90,15 +90,15 @@ function Navbar() {
                   className="border border-gray-400 px-4 py-1 rounded cursor-pointer"
                   onClick={handleLogout}
                 >
-                  Logout
+                  Sign Out
                 </button>
               </div>
             )}
           </>
         ) : (
-          <Link to="/login">
-            <button className="w-36 h-12 border border-[#7a7a7a] rounded-[75px] text-[#515151] text-xl active:bg-[#f3f3f3]">
-              Login
+          <Link to="/signin">
+            <button className="w-36 h-12 border border-[#7a7a7a] rounded-[75px] text-[#515151] text-xl active:bg-[#f3f3f3] cursor-pointer">
+              Sign In
             </button>
           </Link>
         )}
