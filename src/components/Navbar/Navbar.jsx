@@ -1,12 +1,22 @@
 import React, { useContext, useState } from "react";
 import Logo from "../assets/logo.png";
 import cart_icon from "../assets/cart_icon.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ShopContext } from "../../context/ShopContext";
+import { useAuth } from "../../untils/AuthContext";
+import { account } from "../appwriteConfig";
 
 function Navbar() {
   const [menu, setMenu] = useState("shop");
   const { getTotalCartItems } = useContext(ShopContext);
+  const navigate = useNavigate();
+  const { user, setUser } = useAuth();
+
+  const handleLogout = async () => {
+    await account.deleteSession("current");
+    setUser(null);
+    navigate("/login");
+  };
 
   return (
     <div className="flex justify-around shadow-md">
@@ -61,11 +71,15 @@ function Navbar() {
         </li>
       </ul>
       <div className="hidden lg:flex lg:items-center lg:gap-11">
-        <Link to="/login">
-          <button className="w-36 h-12 border border-[#7a7a7a] rounded-[75px] text-[#515151] text-xl active:bg-[#f3f3f3]">
-            Login
-          </button>
-        </Link>
+        {user ? (
+          <button onClick={handleLogout}>Logout</button>
+        ) : (
+          <Link to="/login">
+            <button className="w-36 h-12 border border-[#7a7a7a] rounded-[75px] text-[#515151] text-xl active:bg-[#f3f3f3]">
+              Login
+            </button>
+          </Link>
+        )}
         <Link to="/cart">
           <img src={cart_icon} alt={cart_icon} className="w-6" />
         </Link>

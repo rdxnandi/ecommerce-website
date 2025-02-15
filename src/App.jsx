@@ -22,6 +22,9 @@ function App() {
       <div>
         {!isCheckoutPage && <Navbar />}
         <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
           <Route path="/" element={<Shop />} />
           <Route
             path="/mens"
@@ -35,12 +38,11 @@ function App() {
             path="/kids"
             element={<ShopCategory banner={kid_banner} category="kid" />}
           />
+
           <Route path="product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
         {!isCheckoutPage && <Footer />}
