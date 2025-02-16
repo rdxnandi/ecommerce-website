@@ -4,7 +4,7 @@ import { ID } from "appwrite";
 import { useAuth } from "../untils/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-function Register() {
+function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [createPassword, setCreatePassword] = useState("");
@@ -13,7 +13,7 @@ function Register() {
   const { setUser } = useAuth();
   const navigate = useNavigate();
 
-  const handleRegister = async (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
 
     if (createPassword !== confirmPassword) {
@@ -47,7 +47,7 @@ function Register() {
     <div className="w-full min-h-[80vh] bg-[#fce3fe] py-24">
       <div className="w-[580px] bg-white m-auto px-14 py-10 rounded-lg">
         <h1 className="text-center my-5 text-2xl font-semibold">Sign Up</h1>
-        <form onSubmit={handleRegister}>
+        <form onSubmit={handleSignUp}>
           <div className="flex flex-col gap-7 mt-7">
             <input
               type="text"
@@ -102,4 +102,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default SignUp;

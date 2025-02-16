@@ -5,13 +5,13 @@ import Shop from "./pages/Shop";
 import ShopCategory from "./pages/ShopCategory";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
-import Login from "./pages/Login";
 import Footer from "./components/Footer/Footer";
 import men_banner from "./components/assets/banner_mens.png";
 import women_banner from "./components/assets/banner_women.png";
 import kid_banner from "./components/assets/banner_kids.png";
 import Checkout from "./components/Checkout/Checkout";
-import Register from "./pages/Register";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 function App() {
   const location = useLocation();
@@ -22,8 +22,8 @@ function App() {
       <div>
         {!isCheckoutPage && <Navbar />}
         <Routes>
-          <Route path="/signin" element={<Login />} />
-          <Route path="/signup" element={<Register />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
 
           <Route path="/" element={<Shop />} />
           <Route

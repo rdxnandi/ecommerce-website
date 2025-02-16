@@ -3,13 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { account } from "../components/appwriteConfig";
 import { useAuth } from "../untils/AuthContext";
 
-function Login() {
+function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const { setUser } = useAuth;
 
-  const handleLogin = async (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
     try {
       await account.createEmailPasswordSession(email, password);
@@ -25,7 +25,7 @@ function Login() {
     <div className="w-full min-h-[80vh] bg-[#fce3fe] py-24">
       <div className="w-[580px] bg-white m-auto px-14 py-10 rounded-lg">
         <h1 className="text-center my-5 text-2xl font-semibold">Sign In</h1>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSignIn}>
           <div className="flex flex-col gap-7 mt-7">
             <input
               type="email"
@@ -62,4 +62,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignIn;
