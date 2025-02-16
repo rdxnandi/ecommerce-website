@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
         const response = await account.get();
         setUser(response);
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       }
     };
     getUser();

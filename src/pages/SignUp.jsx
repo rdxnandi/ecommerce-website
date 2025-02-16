@@ -39,7 +39,7 @@ function SignUp() {
       setUser(userData);
       navigate("/");
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   };
 
