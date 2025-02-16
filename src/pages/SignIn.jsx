@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { account } from "../components/appwriteConfig";
 import { useAuth } from "../untils/AuthContext";
+import { Eye, EyeOff } from "lucide-react";
 
 function SignIn() {
+  const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -35,14 +37,23 @@ function SignIn() {
               required
               className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
             />
-            <input
-              type="password"
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              required
-              className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
-            />
+            <div className="flex items-center border border-[#c9c9c9] h-12 rounded-md">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+                className="text-[#5c5c5c] text-xl h-full w-full pl-5 outline-none"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="text-gray-500 w-[50px] flex items-center justify-center"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
           </div>
           <button
             type="submit"

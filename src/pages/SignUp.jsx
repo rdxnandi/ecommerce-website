@@ -3,8 +3,10 @@ import { account } from "../components/appwriteConfig";
 import { ID } from "appwrite";
 import { useAuth } from "../untils/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
 
 function SignUp() {
+  const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [createPassword, setCreatePassword] = useState("");
@@ -65,22 +67,40 @@ function SignUp() {
               required
               className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
             />
-            <input
-              type="password"
-              name="create_password"
-              placeholder="Create Password"
-              onChange={(e) => setCreatePassword(e.target.value)}
-              required
-              className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
-            />
-            <input
-              type="password"
-              name="confirm_password"
-              placeholder="Confirm Password"
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-              className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
-            />
+            <div className="flex items-center border border-[#c9c9c9] h-12 rounded-md">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="create_password"
+                placeholder="Create Password"
+                onChange={(e) => setCreatePassword(e.target.value)}
+                required
+                className="text-[#5c5c5c] text-xl h-full w-full pl-5 outline-none"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="text-gray-500 w-[50px] flex items-center justify-center cursor-pointer"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
+            <div className="flex items-center border border-[#c9c9c9] h-12 rounded-md">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="confirm_password"
+                placeholder="Confirm Password"
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                className="text-[#5c5c5c] text-xl h-full w-full pl-5 outline-none"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="text-gray-500 w-[50px] flex items-center justify-center cursor-pointer"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
           </div>
           <div className="flex gap-3 mt-5">
             <input
