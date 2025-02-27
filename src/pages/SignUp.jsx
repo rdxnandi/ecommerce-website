@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 
 function SignUp() {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showCreatePassword, setShowCreatePassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [createPassword, setCreatePassword] = useState("");
@@ -69,37 +70,49 @@ function SignUp() {
             />
             <div className="flex items-center border border-[#c9c9c9] h-12 rounded-md">
               <input
-                type={showPassword ? "text" : "password"}
+                type={showCreatePassword ? "text" : "password"}
                 name="create_password"
                 placeholder="Create Password"
                 onChange={(e) => setCreatePassword(e.target.value)}
                 required
                 className="text-[#5c5c5c] text-xl h-full w-full pl-5 outline-none"
               />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="text-gray-500 w-[50px] flex items-center justify-center cursor-pointer"
-              >
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-              </button>
+              {createPassword && (
+                <button
+                  type="button"
+                  onClick={() => setShowCreatePassword(!showCreatePassword)}
+                  className="text-gray-500 w-[50px] flex items-center justify-center"
+                >
+                  {showCreatePassword ? (
+                    <EyeOff size={18} />
+                  ) : (
+                    <Eye size={18} />
+                  )}
+                </button>
+              )}
             </div>
             <div className="flex items-center border border-[#c9c9c9] h-12 rounded-md">
               <input
-                type={showPassword ? "text" : "password"}
+                type={showConfirmPassword ? "text" : "password"}
                 name="confirm_password"
                 placeholder="Confirm Password"
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
                 className="text-[#5c5c5c] text-xl h-full w-full pl-5 outline-none"
               />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="text-gray-500 w-[50px] flex items-center justify-center cursor-pointer"
-              >
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-              </button>
+              {confirmPassword && (
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  className="text-gray-500 w-[50px] flex items-center justify-center"
+                >
+                  {showConfirmPassword ? (
+                    <EyeOff size={18} />
+                  ) : (
+                    <Eye size={18} />
+                  )}
+                </button>
+              )}
             </div>
           </div>
           <div className="flex gap-3 mt-5">
@@ -112,9 +125,9 @@ function SignUp() {
           </div>
           <button
             type="submit"
-            className="w-full h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-2xl uppercase"
+            className="w-full h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-2xl uppercase cursor-pointer"
           >
-            Submit
+            Sign Up
           </button>
         </form>
       </div>

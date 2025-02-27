@@ -7,7 +7,7 @@ function Footer() {
     <div className="flex flex-col justify-center items-center gap-[50px]">
       <div className="flex items-center gap-5">
         <img className="w-[140px]" src={logo} alt={logo} />
-        <p className="text-[#383838] text-[46px] font-bold">SHOPPER</p>
+        <p className="text-[#383838] text-[46px] font-bold">Sytlekart</p>
       </div>
       <ul className="flex gap-[50px] text-[#252525] text-xl">
         <li className="cursor-pointer">Company</li>
@@ -29,7 +29,7 @@ function Footer() {
       </div>
       <div className="flex flex-col items-center gap-[30px] w-full mb-[30px] text-[#1a1a1a] text-xl">
         <hr className="w-[80%] rounded-[10px] h-[3px] bg-[#c7c7c7]" />
-        <p>This project was created, using React(Vite) and TailwindCSS.</p>
+        <p>Copyright © 2025 Stylekart. All Rights Reserved</p>
       </div>
     </div>
   );

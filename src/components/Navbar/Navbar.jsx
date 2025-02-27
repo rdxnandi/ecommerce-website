@@ -23,7 +23,7 @@ function Navbar() {
     <div className="flex justify-around shadow-md">
       <div className="flex items-center">
         <img className="h-[100px]" src={Logo} alt={Logo} />
-        <p className="text-[#171717] text-xl uppercase lg:text-4xl">shopper</p>
+        <p className="text-[#171717] text-lg lg:text-4xl">Stylekart</p>
       </div>
       <ul className="hidden text-[#626262] text-xl lg:flex lg:gap-10">
         <li

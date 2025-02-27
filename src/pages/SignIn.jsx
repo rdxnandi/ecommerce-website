@@ -46,20 +46,22 @@ function SignIn() {
                 required
                 className="text-[#5c5c5c] text-xl h-full w-full pl-5 outline-none"
               />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="text-gray-500 w-[50px] flex items-center justify-center"
-              >
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-              </button>
+              {password && (
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="text-gray-500 w-[50px] flex items-center justify-center"
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              )}
             </div>
           </div>
           <button
             type="submit"
-            className="w-full h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-2xl uppercase"
+            className="w-full h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-2xl cursor-pointer"
           >
-            Login
+            Sign in
           </button>
         </form>
         <p className="mt-5 text-[#5c5c5c] text-xl">
