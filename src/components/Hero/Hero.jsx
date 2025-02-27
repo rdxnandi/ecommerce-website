@@ -5,7 +5,7 @@ import hand_icon from "../assets/hand_icon.png";
 function Hero() {
   return (
     <div className="h-screen bg-custom-gradient lg:flex">
-      <div className="flex-1 flex flex-col justify-center lg:gap-5 p-10 lg:p-44">
+      <div className="flex flex-col justify-center lg:gap-5 p-10 lg:p-44">
         <h2 className="text-[#090909] text-xl lg:text-2xl font-semibold">
           NEW ARRIVALS ONLY
         </h2>
@@ -27,7 +27,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="flex-1 flex">
+      <div className="hidden lg:flex">
         <img src={hero_image} alt={hero_image} className="w-[450px]" />
       </div>
     </div>
