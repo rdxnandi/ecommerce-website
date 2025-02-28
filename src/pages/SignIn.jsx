@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, replace, useNavigate } from "react-router-dom";
 import { account } from "../components/appwriteConfig";
 import { useAuth } from "../untils/AuthContext";
 import { Eye, EyeOff } from "lucide-react";
@@ -19,13 +19,13 @@ function SignIn() {
       setUser(userData);
       navigate("/");
     } catch (error) {
-      // console.error(error);
+      console.error(error);
     }
   };
 
   return (
     <div className="w-full min-h-[80vh] bg-[#fce3fe] py-24">
-      <div className="w-[580px] bg-white m-auto px-14 py-10 rounded-lg">
+      <div className="lg:w-[580px] bg-white m-auto px-10 lg:px-14 py-10 rounded-lg">
         <h1 className="text-center my-5 text-2xl font-semibold">Sign In</h1>
         <form onSubmit={handleSignIn}>
           <div className="flex flex-col gap-7 mt-7">
@@ -59,12 +59,12 @@ function SignIn() {
           </div>
           <button
             type="submit"
-            className="w-full h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-2xl cursor-pointer"
+            className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl cursor-pointer"
           >
             Sign in
           </button>
         </form>
-        <p className="mt-5 text-[#5c5c5c] text-xl">
+        <p className="mt-5 text-[#5c5c5c] text-xm lg:text-xl">
           Don't have an account?{" "}
           <span className="text-[#ff4141] font-semibold cursor-pointer">
             <Link to="/signup">Sign Up</Link>

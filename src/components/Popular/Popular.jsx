@@ -5,9 +5,11 @@ import data_product from "../assets/data";
 function Popular() {
   return (
     <div className="flex flex-col items-center gap-3 mb-24">
-      <h1 className="text-[#171717] text-5xl font-semibold">POPULAR IN MEN</h1>
-      <hr className="w-48 h-2 rounded-lg bg-[#252525]" />
-      <div className="mt-12 flex gap-8">
+      <h1 className="text-[#171717] text-3xl lg:text-5xl font-semibold">
+        POPULAR IN MEN
+      </h1>
+      <hr className="w-48 h-1 lg:h-2 rounded-lg bg-[#252525]" />
+      <div className="mt-12 flex flex-wrap gap-8">
         {data_product.map((item, i) => {
           return (
             <Items

@@ -16,7 +16,7 @@ function Navbar() {
   const handleLogout = async () => {
     await account.deleteSession("current");
     setUser(null);
-    navigate("/login");
+    navigate("/signin");
   };
 
   return (
