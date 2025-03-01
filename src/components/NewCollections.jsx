@@ -1,6 +1,6 @@
 import React from "react";
-import Items from "../Items/Items";
-import new_collection from "../assets/new_collections";
+import Items from "./Items";
+import new_collection from "./assets/new_collections";
 
 function NewCollections() {
   return (

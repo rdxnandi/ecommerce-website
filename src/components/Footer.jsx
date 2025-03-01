@@ -1,6 +1,6 @@
 import React from "react";
 import { FaInstagram, FaPinterest, FaWhatsapp } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import logo from "./assets/logo.png";
 
 function Footer() {
   return (

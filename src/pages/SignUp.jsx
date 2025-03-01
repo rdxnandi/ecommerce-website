@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { account } from "../components/appwriteConfig";
+import { account } from "../components/appwrite/appwriteConfig";
 import { ID } from "appwrite";
 import { useAuth } from "../untils/AuthContext";
 import { useNavigate } from "react-router-dom";

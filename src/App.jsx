@@ -1,15 +1,15 @@
 import React from "react";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Shop from "./pages/Shop";
 import ShopCategory from "./pages/ShopCategory";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer";
 import men_banner from "./components/assets/banner_mens.png";
 import women_banner from "./components/assets/banner_women.png";
 import kid_banner from "./components/assets/banner_kids.png";
-import Checkout from "./components/Checkout/Checkout";
+import Checkout from "./components/Checkout";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 

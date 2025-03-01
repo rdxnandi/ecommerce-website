@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, replace, useNavigate } from "react-router-dom";
-import { account } from "../components/appwriteConfig";
+import { account } from "../components/appwrite/appwriteConfig";
 import { useAuth } from "../untils/AuthContext";
 import { Eye, EyeOff } from "lucide-react";
 

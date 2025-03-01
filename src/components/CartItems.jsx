@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { ShopContext } from "../../context/ShopContext";
+import { ShopContext } from "../context/ShopContext";
 import { FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import exclusive_image from "../assets/exclusive_image.png";
+import exclusive_image from "./assets/exclusive_image.png";
 
 function Offers() {
   return (

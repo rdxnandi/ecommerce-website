@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
-import Items from "../components/Items/Items";
-import SortButton from "../components/SortButton/SortButton";
+import Items from "../components/Items";
+import SortButton from "../components/SortButton";
 
 function ShopCategory(props) {
   const { all_product } = useContext(ShopContext);

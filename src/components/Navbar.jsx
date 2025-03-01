@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import Logo from "../assets/logo.png";
-import cart_icon from "../assets/cart_icon.png";
+import Logo from "./assets/logo.png";
+import cart_icon from "./assets/cart_icon.png";
 import { Link, useNavigate } from "react-router-dom";
-import { ShopContext } from "../../context/ShopContext";
-import { useAuth } from "../../untils/AuthContext";
-import { account } from "../appwriteConfig";
+import { ShopContext } from "../context/ShopContext";
+import { useAuth } from "../untils/AuthContext";
+import { account } from "./appwrite/appwriteConfig";
 
 function Navbar() {
   const [menu, setMenu] = useState("shop");

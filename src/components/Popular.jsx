@@ -1,6 +1,6 @@
 import React from "react";
-import Items from "../Items/Items";
-import data_product from "../assets/data";
+import Items from "./Items";
+import data_product from "./assets/data";
 
 function Popular() {
   return (

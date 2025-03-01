@@ -18,6 +18,7 @@ function Items(props) {
       <button
         className="text-gray-300 w-2 lg:text-4xl absolute bottom-4 right-5 lg:right-3 cursor-pointer"
         onClick={(e) => {
+          e.preventDefault();
           setLiked(!liked);
         }}
       >

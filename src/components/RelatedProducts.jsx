@@ -1,6 +1,6 @@
 import React from "react";
-import data_product from "../assets/data";
-import Items from "../Items/Items";
+import data_product from "./assets/data";
+import Items from "./Items";
 
 function RelatedProducts() {
   return (

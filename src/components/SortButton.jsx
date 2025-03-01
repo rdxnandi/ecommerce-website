@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import { ShopContext } from "../../context/ShopContext";
+// import { ShopContext } from "../../context/ShopContext";
 
 function SortButton({ onSort }) {
   const [sortOrder, setSortOrder] = useState("");
