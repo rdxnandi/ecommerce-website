@@ -13,14 +13,14 @@ function ShopCategory(props) {
         src={props.banner}
         alt={props.banner}
       />
-      <div className="flex mx-2 lh:mx-44 my-0 justify-between items-center">
+      <div className="flex mx-2 lg:mx-44 my-0 justify-between items-center">
         <p>
           <span className="font-semibold block">Showing 1-12</span> out of 36
           products
         </p>
         <SortButton />
       </div>
-      <div className="lg:mx-40 my-5 grid grid-cols-2 lg:grid-cols-4 gap-y-20">
+      <div className="lg:mx-36 my-5 grid grid-cols-2 lg:grid-cols-4 gap-y-20">
         {all_product.map((item, i) => {
           if (props.category === item.category) {
             return (
