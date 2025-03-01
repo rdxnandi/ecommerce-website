@@ -5,6 +5,16 @@ import { Heart } from "lucide-react";
 function Items(props) {
   const [liked, setLiked] = useState(false);
 
+  const handleLike = (e) => {
+    e.preventDefault();
+    setLiked(!liked);
+  };
+
+  const handleImageClick = (e) => {
+    e.preventDefault();
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="lg:w-56 w-40 shadow-md hover:transform hover:scale-105 hover:duration-700 rounded-md p-4 relative">
       <Link to={`/product/${props.id}`}>
@@ -12,15 +22,12 @@ function Items(props) {
           src={props.image}
           alt={props.name}
           className="lg:h-52 h-40 w-full"
-          onClick={window.scrollTo(0, 0)}
+          onClick={handleImageClick}
         />
       </Link>
       <button
         className="text-gray-300 w-2 lg:text-4xl absolute bottom-4 right-5 lg:right-6 cursor-pointer"
-        onClick={(e) => {
-          e.preventDefault();
-          setLiked(!liked);
-        }}
+        onClick={handleLike}
       >
         {liked ? (
           <Heart className="text-white fill-red-500" />
