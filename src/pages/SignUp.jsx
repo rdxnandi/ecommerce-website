@@ -13,6 +13,7 @@ function SignUp() {
   const [createPassword, setCreatePassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agreeTerms, setAgreeTerms] = useState(false);
+  const [error, setError] = useState("");
   const { setUser } = useAuth();
   const navigate = useNavigate();
 
@@ -20,12 +21,12 @@ function SignUp() {
     e.preventDefault();
 
     if (createPassword !== confirmPassword) {
-      alert("Password do not match!");
+      setError("Passwords do not match!");
       return;
     }
 
     if (!agreeTerms) {
-      alert("You must agree to the terms and conditions.");
+      setError("You must agree to the terms and conditions.");
       return;
     }
 
@@ -42,7 +43,7 @@ function SignUp() {
       setUser(userData);
       navigate("/");
     } catch (error) {
-      // console.error(error);
+      setError(error.message);
     }
   };
 
@@ -123,6 +124,7 @@ function SignUp() {
             />
             <p>Terms and Condition</p>
           </div>
+          {error && <p className="text-red-500 mt-3">{error}</p>}
           <button
             type="submit"
             className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl uppercase cursor-pointer"
