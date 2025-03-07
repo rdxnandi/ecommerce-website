@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import { account } from "../components/appwrite/appwriteConfig";
-import { ID } from "appwrite";
-import { useAuth } from "../untils/AuthContext";
-import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 
 function SignUp() {
@@ -13,38 +9,9 @@ function SignUp() {
   const [createPassword, setCreatePassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agreeTerms, setAgreeTerms] = useState(false);
-  const [error, setError] = useState("");
-  const { setUser } = useAuth();
-  const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-
-    if (createPassword !== confirmPassword) {
-      setError("Passwords do not match!");
-      return;
-    }
-
-    if (!agreeTerms) {
-      setError("You must agree to the terms and conditions.");
-      return;
-    }
-
-    try {
-      const newUser = await account.create(
-        ID.unique(),
-        email,
-        createPassword,
-        name
-      );
-
-      await account.createEmailPasswordSession(email, createPassword);
-      const userData = await account.get();
-      setUser(userData);
-      navigate("/");
-    } catch (error) {
-      setError(error.message);
-    }
   };
 
   return (
@@ -124,7 +91,6 @@ function SignUp() {
             />
             <p>Terms and Condition</p>
           </div>
-          {error && <p className="text-red-500 mt-3">{error}</p>}
           <button
             type="submit"
             className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl uppercase cursor-pointer"

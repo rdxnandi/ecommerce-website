@@ -1,26 +1,14 @@
 import React, { useState } from "react";
-import { Link, replace, useNavigate } from "react-router-dom";
-import { account } from "../components/appwrite/appwriteConfig";
-import { useAuth } from "../untils/AuthContext";
+import { Link } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  const { setUser } = useAuth;
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    try {
-      await account.createEmailPasswordSession(email, password);
-      const userData = await account.get();
-      setUser(userData);
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-    }
   };
 
   return (
