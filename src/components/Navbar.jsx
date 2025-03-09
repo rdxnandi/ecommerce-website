@@ -1,63 +1,68 @@
 import React, { useContext, useState } from "react";
 import Logo from "./assets/logo.png";
 import cart_icon from "./assets/cart_icon.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 
 function Navbar() {
-  const [menu, setMenu] = useState("shop");
   const { getTotalCartItems } = useContext(ShopContext);
 
   return (
     <div className="flex justify-around shadow-md">
-      <div className="flex items-center">
-        <img className="h-[100px]" src={Logo} alt={Logo} />
-        <p className="text-[#171717] text-lg lg:text-4xl">Stylekart</p>
+      <div>
+        <Link to="/" className="flex items-center">
+          <img className="h-[100px]" src={Logo} alt={Logo} />
+          <p className="text-[#171717] text-lg lg:text-4xl">Stylekart</p>
+        </Link>
       </div>
       <ul className="hidden text-[#626262] text-xl lg:flex lg:gap-10">
-        <li
-          className="flex flex-col items-center justify-center gap-1 cursor-pointer"
-          onClick={() => setMenu("shop")}
-        >
-          <Link to="/">Shop</Link>{" "}
-          {menu === "shop" ? (
-            <hr className="w-4/5 h-1 rounded-lg bg-[#ff4141]" />
-          ) : (
-            <></>
-          )}
+        <li className="flex items-center justify-center">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `flex items-center justify-center cursor-pointer relative after:absolute after:-bottom-1 after:w-4/5 after:h-1 after:rounded-lg ${
+                isActive ? "after:bg-[#ff4141]" : ""
+              }`
+            }
+          >
+            Shop
+          </NavLink>
         </li>
-        <li
-          className="flex flex-col items-center justify-center gap-1 cursor-pointer"
-          onClick={() => setMenu("mens")}
-        >
-          <Link to="/mens">Men</Link>{" "}
-          {menu === "mens" ? (
-            <hr className="w-4/5 h-1 rounded-lg bg-[#ff4141]" />
-          ) : (
-            <></>
-          )}
+        <li className="flex items-center justify-center">
+          <NavLink
+            to="/mens"
+            className={({ isActive }) =>
+              `flex items-center justify-center cursor-pointer relative after:absolute after:-bottom-1 after:w-4/5 after:h-1 after:rounded-lg ${
+                isActive ? "after:bg-[#ff4141]" : ""
+              }`
+            }
+          >
+            Men
+          </NavLink>
         </li>
-        <li
-          className="flex flex-col items-center justify-center gap-1 cursor-pointer"
-          onClick={() => setMenu("womens")}
-        >
-          <Link to="/womens">Women</Link>{" "}
-          {menu === "womens" ? (
-            <hr className="w-4/5 h-1 rounded-lg bg-[#ff4141]" />
-          ) : (
-            <></>
-          )}
+        <li className="flex items-center justify-center">
+          <NavLink
+            to="/womens"
+            className={({ isActive }) =>
+              `flex items-center justify-center cursor-pointer relative after:absolute after:-bottom-1 after:w-4/5 after:h-1 after:rounded-lg ${
+                isActive ? "after:bg-[#ff4141]" : ""
+              }`
+            }
+          >
+            Women
+          </NavLink>
         </li>
-        <li
-          className="flex flex-col items-center justify-center gap-1 cursor-pointer"
-          onClick={() => setMenu("kids")}
-        >
-          <Link to="/kids">Kids</Link>{" "}
-          {menu === "kids" ? (
-            <hr className="w-4/5 h-1 rounded-lg bg-[#ff4141]" />
-          ) : (
-            <></>
-          )}
+        <li className="flex items-center justify-center">
+          <NavLink
+            to="/kids"
+            className={({ isActive }) =>
+              `flex items-center justify-center cursor-pointer relative after:absolute after:-bottom-1 after:w-4/5 after:h-1 after:rounded-lg ${
+                isActive ? "after:bg-[#ff4141]" : ""
+              }`
+            }
+          >
+            Kids
+          </NavLink>
         </li>
       </ul>
       <div className="hidden lg:flex lg:items-center lg:gap-11 relative">
