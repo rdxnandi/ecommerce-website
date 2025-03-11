@@ -1,37 +1,75 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, matchPath, useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
+import { login as authLogin } from "../store/authSlice";
+import { useDispatch } from "react-redux";
+import { useForm } from "react-hook-form";
+import authService from "../appwrite/auth";
 
 function SignIn() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+    setError,
+  } = useForm({ mode: "onChange" });
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleSignIn = async (e) => {
-    e.preventDefault();
+  const password = watch("password");
+
+  const signin = async (data) => {
+    setError("");
+    try {
+      const session = await authService.login(data);
+      if (session) {
+        const userData = await authService.getCurrentUser();
+        if (userData) dispatch(authLogin(userData));
+        navigate("/");
+      }
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
     <div className="w-full min-h-[80vh] bg-[#fce3fe] py-24">
       <div className="lg:w-[580px] bg-white m-auto px-10 lg:px-14 py-10 rounded-lg">
         <h1 className="text-center my-5 text-2xl font-semibold">Sign In</h1>
-        <form onSubmit={handleSignIn}>
+        <form onSubmit={handleSubmit(signin)}>
           <div className="flex flex-col gap-7 mt-7">
             <input
               type="email"
               name="email"
               placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
+              {...register("email", {
+                required: "Email is Required",
+                validate: {
+                  matchPatter: (value) =>
+                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                    "Email address must be a valid address",
+                },
+              })}
               className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
             />
+            {errors.email && (
+              <p className="text-red-500 text-lg">{errors.email.message}</p>
+            )}
+
             <div className="flex items-center border border-[#c9c9c9] h-12 rounded-md">
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
-                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                required
+                {...register("password", {
+                  required: "Password is Required",
+                  minLength: {
+                    value: 8,
+                    message: "Password must be at least 8 character long",
+                  },
+                })}
                 className="text-[#5c5c5c] text-xl h-full w-full pl-5 outline-none"
               />
               {password && (
@@ -44,6 +82,9 @@ function SignIn() {
                 </button>
               )}
             </div>
+            {errors.password && (
+              <p className="text-red-500 text-lg">{errors.password.message}</p>
+            )}
           </div>
           <button
             type="submit"

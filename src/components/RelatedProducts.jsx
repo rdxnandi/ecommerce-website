@@ -1,5 +1,5 @@
 import React from "react";
-import data_product from "./assets/data";
+import data_product from "./assets/new_collections";
 import Items from "./Items";
 
 function RelatedProducts() {

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Heart } from "lucide-react";
 
 function Items(props) {
   const [liked, setLiked] = useState(false);
+  const navigate = useNavigate();
 
   const handleLike = (e) => {
     e.preventDefault();
@@ -17,14 +18,14 @@ function Items(props) {
 
   return (
     <div className="lg:w-56 w-40 shadow-md hover:transform hover:scale-105 hover:duration-700 rounded-md p-4 relative">
-      <Link to={`/product/${props.id}`}>
+      <button onClick={() => navigate(`/product/${props.id}`)}>
         <img
           src={props.image}
           alt={props.name}
           className="lg:h-52 h-40 w-full"
           onClick={handleImageClick}
         />
-      </Link>
+      </button>
       <button
         className="text-gray-300 w-2 lg:text-4xl absolute bottom-4 right-5 lg:right-6 cursor-pointer"
         onClick={handleLike}

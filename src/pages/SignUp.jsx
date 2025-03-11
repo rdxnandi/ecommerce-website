@@ -1,96 +1,106 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useForm } from "react-hook-form";
+import { login } from "../store/authSlice";
+import authService from "../appwrite/auth";
 
 function SignUp() {
-  const [showCreatePassword, setShowCreatePassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [createPassword, setCreatePassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [agreeTerms, setAgreeTerms] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+    setError,
+  } = useForm({ mode: "onChange" });
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleSignUp = async (e) => {
-    e.preventDefault();
+  const password = watch("password");
+
+  const create = async (data) => {
+    setError("");
+    try {
+      const session = await authService.createAccount(data);
+      if (session) {
+        const userData = await authService.getCurrentUser();
+        if (userData) dispatch(login(userData));
+        navigate("/");
+      }
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
     <div className="w-full min-h-[80vh] bg-[#fce3fe] py-24">
       <div className="lg:w-[580px] bg-white m-auto px-10 lg:px-14 py-10 rounded-lg">
         <h1 className="text-center my-5 text-2xl font-semibold">Sign Up</h1>
-        <form onSubmit={handleSignUp}>
+        <form onSubmit={handleSubmit(create)}>
           <div className="flex flex-col gap-7 mt-7">
             <input
               type="text"
               name="name"
               placeholder="Name"
-              onChange={(e) => setName(e.target.value)}
-              required
+              {...register("name", {
+                required: "Name is Required",
+              })}
               className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            )}
+
             <input
               type="email"
               name="email"
               placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
+              {...register("email", {
+                required: "Email is Required",
+                pattern: {
+                  value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+                  message: "Email address must be valid address",
+                },
+              })}
               className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            )}
+
             <div className="flex items-center border border-[#c9c9c9] h-12 rounded-md">
               <input
-                type={showCreatePassword ? "text" : "password"}
-                name="create_password"
-                placeholder="Create Password"
-                onChange={(e) => setCreatePassword(e.target.value)}
-                required
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+                {...register("password", {
+                  required: "Password is Required",
+                  minLength: {
+                    value: 8,
+                    message: "Password must be at least 8 character long",
+                  },
+                })}
                 className="text-[#5c5c5c] text-xl h-full w-full pl-5 outline-none"
               />
-              {createPassword && (
+              {password && (
                 <button
                   type="button"
-                  onClick={() => setShowCreatePassword(!showCreatePassword)}
+                  onClick={() => setShowPassword(!showPassword)}
                   className="text-gray-500 w-[50px] flex items-center justify-center"
                 >
-                  {showCreatePassword ? (
-                    <EyeOff size={18} />
-                  ) : (
-                    <Eye size={18} />
-                  )}
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               )}
             </div>
-            <div className="flex items-center border border-[#c9c9c9] h-12 rounded-md">
-              <input
-                type={showConfirmPassword ? "text" : "password"}
-                name="confirm_password"
-                placeholder="Confirm Password"
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-                className="text-[#5c5c5c] text-xl h-full w-full pl-5 outline-none"
-              />
-              {confirmPassword && (
-                <button
-                  type="button"
-                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="text-gray-500 w-[50px] flex items-center justify-center"
-                >
-                  {showConfirmPassword ? (
-                    <EyeOff size={18} />
-                  ) : (
-                    <Eye size={18} />
-                  )}
-                </button>
-              )}
-            </div>
+            {errors.password && (
+              <p className="text-red-500 text-center">
+                {errors.password.message}
+              </p>
+            )}
           </div>
-          <div className="flex gap-3 mt-5">
-            <input
-              type="checkbox"
-              checked={agreeTerms}
-              onChange={() => setAgreeTerms(!agreeTerms)}
-            />
-            <p>Terms and Condition</p>
-          </div>
+
           <button
             type="submit"
             className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl uppercase cursor-pointer"

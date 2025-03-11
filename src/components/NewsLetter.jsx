@@ -15,7 +15,7 @@ function NewsLetter() {
           placeholder="Your Email id"
           className="lg:w-[500px] w-[180px] outline-hidden ml-7 text-[#616161] text-xl"
         />
-        <button className="lg:w-52 w-[120px] h-full rounded-full lg:rounded-full bg-black text-white text-sm lg:text-xl">
+        <button className="lg:w-52 w-[120px] h-full rounded-full lg:rounded-full bg-black text-white text-sm lg:text-xl cursor-pointer">
           Subscribe
         </button>
       </div>

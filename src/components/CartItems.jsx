@@ -71,7 +71,7 @@ function CartItems() {
           </div>
 
           <button
-            className="w-[262px] h-[58px] bg-[#ff5a5a] text-white text-xm font-semibold"
+            className="w-[262px] h-[58px] bg-[#ff5a5a] text-white text-xm font-semibold cursor-pointer"
             onClick={() => navigate("/checkout")}
           >
             PROCEED TO CHECKOUT
