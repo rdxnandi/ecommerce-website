@@ -15,7 +15,7 @@ Stylekart is a modern e-commerce website built with React and Tailwind CSS.
 
 ## Live Page
 
-live-page-link:
+live-page-link: https://stylekart-site.vercel.app
 
 ## License
 
