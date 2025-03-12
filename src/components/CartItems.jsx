@@ -14,8 +14,8 @@ function CartItems() {
   };
 
   return (
-    <div className="mx-[170px] my-[100px]">
-      <div className="grid grid-cols-custom-layout items-center gap-16 px-0 py-5 text-[#454545] text-xm font-semibold">
+    <div className="mx-4 my-10 lg:mx-[170px] lg:my-[100px]">
+      <div className="hidden lg:grid grid-cols-custom-layout items-center gap-16 px-0 py-5 text-[#454545] text-xm font-semibold">
         <p>Product</p>
         <p>Title</p>
         <p>Price</p>
@@ -23,16 +23,17 @@ function CartItems() {
         <p>Total</p>
         <p>Remove</p>
       </div>
-      <hr className="h-[3px] bg-[#e2e2e2]" />
+      <hr className="hidden lg:block h-[3px] bg-[#e2e2e2]" />
+
       {all_product.map((e) => {
         if (cartItem[e.id] > 0) {
           return (
             <div>
-              <div className="grid grid-cols-custom-layout items-center gap-[75px] px-0 py-5 text-[#454545] font-semibold text-[17px]">
-                <img className="w-[62px]" src={e.image} alt="" />
-                <p>{e.name}</p>
+              <div className="flex flex-col lg:grid lg:grid-cols-custom-layout items-center lg:gap-[75px] px-0 py-5 text-[#454545] font-semibold text-[17px]">
+                <img className="w-16 h-16 lg:w-[62px]" src={e.image} alt="" />
+                <p className="text-center">{e.name}</p>
                 <p>${e.new_price.toFixed(2)}</p>
-                <button className="w-[64px] h-[40px] border-2 border-[#ebebeb]">
+                <button className="w-12 h-10 lg:w-[64px] lg:h-[40px] border-2 border-[#ebebeb]">
                   {cartItem[e.id]}
                 </button>
                 <p>${(e.new_price * cartItem[e.id]).toFixed(2)}</p>
@@ -79,13 +80,13 @@ function CartItems() {
         </div>
         <div className="flex-1 text-xm">
           <p className="text-[#555]">If you have a promo code, Enter it here</p>
-          <div className="flex w-[504px] mt-4 pl-5 bg-[#eaeaea]">
+          <div className="flex flex-col lg:flex-row w-[504px] mt-4 pl-5 lg:bg-[#eaeaea]">
             <input
               type="text"
               value={promoCode}
               onChange={handlePromoChange}
               placeholder="promo code"
-              className="outline-hidden text-xm w-[330px] h-[50px] bg-transparent text-gray-500"
+              className="outline-hidden text-xm w-full lg:w-[330px] h-[50px] bg-transparent text-gray-500 border"
             />
             <button className="w-40 h-14 text-xm bg-black text-white">
               Submit

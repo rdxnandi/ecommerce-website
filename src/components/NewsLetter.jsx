@@ -9,13 +9,13 @@ function NewsLetter() {
       <p className="text-[#454545] text-xm">
         Subscribe to our newsletter and stay updated
       </p>
-      <div className="flex items-center justify-between bg-white lg:w-[730px] w-[300px] h-14 lg:h-16 rounded-full border border-[#e3e3e3] mt-7">
+      <div className="flex lg:flex-row flex-col gap-4 lg:gap-0 items-center justify-between bg-white lg:w-[730px] w-[300px] h-16 lg:rounded-full lg:border lg:border-[#e3e3e3] mt-7">
         <input
           type="email"
           placeholder="Your Email id"
-          className="lg:w-[500px] w-[180px] outline-hidden ml-7 text-[#616161] text-xl"
+          className="lg:w-[500px] w-full lg:border-none border border-[#a4a4a4] py-4 px-2 rounded-xl outline-hidden ml-7 text-[#616161] text-xl"
         />
-        <button className="lg:w-52 w-[120px] h-full rounded-full lg:rounded-full bg-black text-white text-sm lg:text-xl cursor-pointer">
+        <button className="lg:w-52 w-[120px] h-full rounded-full py-3 lg:rounded-full bg-black text-white text-sm lg:text-xl cursor-pointer">
           Subscribe
         </button>
       </div>

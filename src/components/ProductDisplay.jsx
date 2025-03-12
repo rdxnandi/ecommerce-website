@@ -8,7 +8,7 @@ function ProductDisplay(props) {
   const { addToCart } = useContext(ShopContext);
 
   return (
-    <div className="flex mx-40 my-0">
+    <div className="flex flex-col lg:flex-row lg:mx-40 my-0 px-4">
       <div className="flex gap-4">
         <div className="flex flex-col gap-4">
           <img className="w-36 h-[88px]" src={product.image} alt="" />
@@ -20,8 +20,8 @@ function ProductDisplay(props) {
           <img className="w-[586px] h-[400px]" src={product.image} alt="" />
         </div>
       </div>
-      <div className="mx-16 my-0 flex flex-col">
-        <h1 className="text-[#3d3d3d] text-4xl font-bold">{product.name}</h1>
+      <div className="lg:mx-16 mt-6 lg:mt-0 my-0 flex flex-col">
+        <h1 className="text-[#3d3d3d] lg:text-4xl font-bold">{product.name}</h1>
         <div className="flex items-center mt-[13px] gap-1 text-[#1c1c1c] text-xl">
           <img src={star_icon} alt="" />
           <img src={star_icon} alt="" />
@@ -30,7 +30,7 @@ function ProductDisplay(props) {
           <img src={star_dull_icon} alt="" />
           <p>(122)</p>
         </div>
-        <div className="flex mx-0 my-8 gap-7 text-[24px] font-bold">
+        <div className="flex mx-0 my-8 gap-7 lg:text-[24px] text-lg font-bold">
           <div className="text-[#818181] line-through">
             ${product.old_price.toFixed(2)}
           </div>

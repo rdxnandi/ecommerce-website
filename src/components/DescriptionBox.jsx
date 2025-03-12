@@ -2,7 +2,7 @@ import React from "react";
 
 function DescriptionBox() {
   return (
-    <div className="mx-[170px] my-[120px]">
+    <div className="lg:mx-[170px] my-[120px]">
       <div className="flex">
         <div className="flex items-center justify-center text-xl font-semibold w-[171px] h-[70px] border border-#d0d0d0">
           Description

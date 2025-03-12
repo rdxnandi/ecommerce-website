@@ -9,7 +9,7 @@ function RelatedProducts() {
         Related Products
       </h1>
       <hr className="w-[200px] h-[6px] rounded-xl bg-[#252525]" />
-      <div className="mt-[50px] flex gap-[30px]">
+      <div className="mt-[50px] grid lg:grid-cols-4 grid-col-2 gap-4">
         {data_product.map((item, i) => {
           return (
             <Items

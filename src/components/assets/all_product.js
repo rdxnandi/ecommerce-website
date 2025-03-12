@@ -142,7 +142,7 @@ let all_product = [
   },
   {
     id: 14,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men White with Blue and Red Puffer Jacket",
     category: "men",
     image: p14_img,
     new_price: 94.0,
@@ -150,7 +150,7 @@ let all_product = [
   },
   {
     id: 15,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men Black With a White Abstract Pattern Printed Bomber Jacket",
     category: "men",
     image: p15_img,
     new_price: 101.0,
@@ -158,7 +158,7 @@ let all_product = [
   },
   {
     id: 16,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men Red, Navy and Yellow with Urban Street Active Colorblock Windbreaker Jacket",
     category: "men",
     image: p16_img,
     new_price: 98.0,
@@ -166,7 +166,7 @@ let all_product = [
   },
   {
     id: 17,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men Classic Blue Denim Jacket",
     category: "men",
     image: p17_img,
     new_price: 99.0,
@@ -174,7 +174,7 @@ let all_product = [
   },
   {
     id: 18,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men Light Gray With a Minimalistic Lightweight Zip-Up Jacket",
     category: "men",
     image: p18_img,
     new_price: 115.0,
@@ -182,7 +182,7 @@ let all_product = [
   },
   {
     id: 19,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men White With Black Sports Windbreaker Jacket",
     category: "men",
     image: p19_img,
     new_price: 111.0,
@@ -190,7 +190,7 @@ let all_product = [
   },
   {
     id: 20,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men Navy Blue, likely Soft Fabric Casual Fleece or Track Jacket",
     category: "men",
     image: p20_img,
     new_price: 55.0,
@@ -198,7 +198,7 @@ let all_product = [
   },
   {
     id: 21,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men Red, Black, and Gray with 'Extreme Adventures' Colorblock Windbreaker Jacket",
     category: "men",
     image: p21_img,
     new_price: 68.0,
@@ -206,7 +206,7 @@ let all_product = [
   },
   {
     id: 22,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men All White Hooded Puffer Jacket",
     category: "men",
     image: p22_img,
     new_price: 99.0,
@@ -214,7 +214,7 @@ let all_product = [
   },
   {
     id: 23,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men Dark Green Denim, Layered over a Yellow Casual Denim Jacket",
     category: "men",
     image: p23_img,
     new_price: 112.0,
@@ -222,7 +222,7 @@ let all_product = [
   },
   {
     id: 24,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Men Classic Black Leather with Zipper Biker Jacket",
     category: "men",
     image: p24_img,
     new_price: 93.0,
