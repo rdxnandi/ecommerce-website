@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { login } from "../store/authSlice";
@@ -49,8 +49,8 @@ function SignUp() {
               })}
               className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
             />
-            {errors.email && (
-              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            {errors.name && (
+              <p className="text-red-500 text-sm">{errors.name.message}</p>
             )}
 
             <input
@@ -95,19 +95,23 @@ function SignUp() {
               )}
             </div>
             {errors.password && (
-              <p className="text-red-500 text-center">
-                {errors.password.message}
-              </p>
+              <p className="text-red-500 text-sm">{errors.password.message}</p>
             )}
           </div>
 
           <button
             type="submit"
-            className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl uppercase cursor-pointer"
+            className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl uppercase cursor-pointer hover:bg-red-400 active:bg-red-500"
           >
             Sign Up
           </button>
         </form>
+        <p className="mt-5 text-[#5c5c5c] text-xm lg:text-xl">
+          Already have an account?{" "}
+          <span className="text-[#ff4141] font-semibold cursor-pointer">
+            <Link to="/signin">Sign In</Link>
+          </span>
+        </p>
       </div>
     </div>
   );

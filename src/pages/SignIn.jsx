@@ -55,7 +55,7 @@ function SignIn() {
               className="h-12 w-full pl-5 border border-[#c9c9c9] rounded-md outline-hidden text-[#5c5c5c] text-xl"
             />
             {errors.email && (
-              <p className="text-red-500 text-lg">{errors.email.message}</p>
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
             )}
 
             <div className="flex items-center border border-[#c9c9c9] h-12 rounded-md">
@@ -83,12 +83,12 @@ function SignIn() {
               )}
             </div>
             {errors.password && (
-              <p className="text-red-500 text-lg">{errors.password.message}</p>
+              <p className="text-red-500 text-sm">{errors.password.message}</p>
             )}
           </div>
           <button
             type="submit"
-            className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl cursor-pointer"
+            className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl cursor-pointer hover:bg-red-400 active:bg-red-500"
           >
             Sign in
           </button>
