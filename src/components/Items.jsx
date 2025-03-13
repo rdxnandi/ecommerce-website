@@ -29,7 +29,7 @@ function Items(props) {
 
       <p className="mx-0 my-1 text-sm">{props.name}</p>
 
-      <div className="flex items-center lg:gap-10 gap-4">
+      <div className="flex items-center lg:gap-12 gap-2">
         <div className="flex gap-2">
           <div className="text-[#374151] lg:text-xl font-semibold">
             ${props.new_price}
@@ -43,9 +43,9 @@ function Items(props) {
           onClick={handleLike}
         >
           {liked ? (
-            <Heart className="text-white fill-red-500" />
+            <Heart className="text-white fill-red-500" size={18} />
           ) : (
-            <Heart className="text-gray-400" />
+            <Heart className="text-gray-400" size={18} />
           )}
         </button>
       </div>

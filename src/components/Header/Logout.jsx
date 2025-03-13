@@ -12,7 +12,11 @@ function Logout() {
     });
   };
 
-  return <button onClick={logoutHandler}>Logout</button>;
+  return (
+    <button className="cursor-pointer" onClick={logoutHandler}>
+      Logout
+    </button>
+  );
 }
 
 export default Logout;

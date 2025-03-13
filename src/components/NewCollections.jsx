@@ -9,7 +9,7 @@ function NewCollections() {
         NEW COLLECTIONS
       </h1>
       <hr className="w-48 h-1 lg:h-2 rounded-lg bg-[#252525]" />
-      <div className="grid grid-cols-2 lg:grid-cols-4 mt-12 gap-4 lg:gap-7">
+      <div className="grid grid-cols-2 lg:grid-cols-4 mt-12 gap-4 lg:gap-7 p-2 lg:p-0">
         {new_collection.map((item, i) => {
           return (
             <Items
