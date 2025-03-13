@@ -38,7 +38,7 @@ import p36_img from "./product_36.png";
 let all_product = [
   {
     id: 1,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Black Plush Faux Fur Coat, Giving a luxurious and cozy look",
     category: "women",
     image: p1_img,
     new_price: 50.0,
@@ -46,7 +46,7 @@ let all_product = [
   },
   {
     id: 2,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Soft Pink, Fitted, Square-neck Crop Top",
     category: "women",
     image: p2_img,
     new_price: 85.0,
@@ -54,7 +54,7 @@ let all_product = [
   },
   {
     id: 3,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Brown and White Athletic Sports Bra.",
     category: "women",
     image: p3_img,
     new_price: 60.0,
@@ -62,7 +62,7 @@ let all_product = [
   },
   {
     id: 4,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Red and Black Patterned wrap-style Top or Dress, Giving a Bohemian Vibe",
     category: "women",
     image: p4_img,
     new_price: 100.0,
@@ -70,7 +70,7 @@ let all_product = [
   },
   {
     id: 5,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Mauve or dusty Pink, V-neck, with ruffled sleeves and a textured fabric Ruffled Sleeve Crop Top",
     category: "women",
     image: p5_img,
     new_price: 90.0,
@@ -78,7 +78,7 @@ let all_product = [
   },
   {
     id: 6,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Brown long-sleeve top, paired with a Hijab, Black Striped Skirt, and a stylish hat",
     category: "women",
     image: p6_img,
     new_price: 100.0,
@@ -86,7 +86,7 @@ let all_product = [
   },
   {
     id: 7,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Fitted white turtleneck, paired with a pleated skirt for a classy look",
     category: "women",
     image: p7_img,
     new_price: 95.0,
@@ -94,7 +94,7 @@ let all_product = [
   },
   {
     id: 8,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Black and white floral wrap-style top, with puffed sleeves for a casual yet elegant look",
     category: "women",
     image: p8_img,
     new_price: 75.0,

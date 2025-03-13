@@ -32,25 +32,30 @@ function CartItems() {
               <div className="flex flex-col lg:grid lg:grid-cols-custom-layout items-center lg:gap-[75px] px-0 py-5 text-[#454545] font-semibold text-[17px]">
                 <img className="w-16 h-16 lg:w-[62px]" src={e.image} alt="" />
                 <p className="text-center">{e.name}</p>
-                <p>${e.new_price.toFixed(2)}</p>
-                <button className="w-12 h-10 lg:w-[64px] lg:h-[40px] border-2 border-[#ebebeb]">
-                  {cartItem[e.id]}
-                </button>
-                <p>${(e.new_price * cartItem[e.id]).toFixed(2)}</p>
-                <FaTrash
-                  onClick={() => {
-                    removeFromCart(e.id);
-                  }}
-                  className="w-[15px] mx-10 my-0 cursor-pointer"
-                />
+                <div className="flex items-center">
+                  <div className="flex gap-2 items-center">
+                    <p>${e.new_price.toFixed(2)}</p>
+                    <button className="w-12 h-10 lg:w-[64px] lg:h-[40px] border-2 border-[#ebebeb]">
+                      {cartItem[e.id]}
+                    </button>
+                    <p>${(e.new_price * cartItem[e.id]).toFixed(2)}</p>
+                  </div>
+                  <FaTrash
+                    onClick={() => {
+                      removeFromCart(e.id);
+                    }}
+                    className="w-[15px] mx-10 my-0 cursor-pointer"
+                  />
+                </div>
               </div>
             </div>
           );
         }
         return null;
       })}
-      <div className="flex mx-0 my-24">
-        <div className="flex-1 flex flex-col mt-48 gap-10">
+
+      <div className="flex mx-0 my-24 flex-col lg:flex-row">
+        <div className="lg:flex-1 flex flex-col lg:mt-48 gap-10">
           <h1>Cart Totals</h1>
           <div>
             <div className="flex justify-between px-0 py-4">
@@ -78,9 +83,10 @@ function CartItems() {
             PROCEED TO CHECKOUT
           </button>
         </div>
-        <div className="flex-1 text-xm">
+
+        <div className="lg:flex-1 text-xm mt-16 lg:mt-0">
           <p className="text-[#555]">If you have a promo code, Enter it here</p>
-          <div className="flex flex-col lg:flex-row w-[504px] mt-4 pl-5 lg:bg-[#eaeaea]">
+          <div className="flex flex-col gap-4 lg:gap-0 lg:flex-row lg:w-[504px] mt-4 lg:pl-5 lg:bg-[#eaeaea]">
             <input
               type="text"
               value={promoCode}
@@ -88,7 +94,7 @@ function CartItems() {
               placeholder="promo code"
               className="outline-hidden text-xm w-full lg:w-[330px] h-[50px] bg-transparent text-gray-500 border"
             />
-            <button className="w-40 h-14 text-xm bg-black text-white">
+            <button className="lg:w-40 lg:h-14 w-20 h-10 text-xm bg-black text-white m-auto cursor-pointer hover:bg-gray-900 active:bg-gray-800">
               Submit
             </button>
           </div>
