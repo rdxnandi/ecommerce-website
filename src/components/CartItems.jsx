@@ -94,7 +94,7 @@ function CartItems() {
               placeholder="promo code"
               className="outline-hidden text-xm w-full lg:w-[330px] h-[50px] bg-transparent text-gray-500 border"
             />
-            <button className="lg:w-40 lg:h-14 w-20 h-10 text-xm bg-black text-white m-auto cursor-pointer hover:bg-gray-900 active:bg-gray-800">
+            <button className="lg:w-40 lg:h-14 w-20 h-10 text-xm bg-black text-white m-auto cursor-pointer">
               Submit
             </button>
           </div>

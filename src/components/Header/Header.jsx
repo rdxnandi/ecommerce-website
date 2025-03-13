@@ -48,7 +48,7 @@ function Header() {
               <p className="text-[#171717] text-lg lg:text-4xl">Stylekart</p>
             </Link>
           </div>
-          <ul className="fixed bottom-0 bg-white w-full h-12 justify-center lg:bg-transparent lg:justify-start lg:h-auto lg:static lg:w-auto text-[#626262] text-xl flex gap-5 lg:gap-10">
+          <ul className="fixed bottom-0 left-0 bg-white w-full h-12 justify-center lg:bg-transparent lg:justify-start lg:h-auto lg:static lg:w-auto text-[#626262] text-xl flex gap-5 lg:gap-10">
             {navItems.map((item) =>
               item.active ? (
                 <li
