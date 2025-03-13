@@ -5,11 +5,11 @@ import Items from "./Items";
 function RelatedProducts() {
   return (
     <div className="flex flex-col items-center gap-2 min-h-[90vh]">
-      <h1 className="text-[#171717] text-[50px] font-semibold">
+      <h1 className="text-[#171717] lg:text-5xl text-3xl font-semibold">
         Related Products
       </h1>
-      <hr className="w-[200px] h-[6px] rounded-xl bg-[#252525]" />
-      <div className="mt-[50px] grid lg:grid-cols-4 grid-col-2 gap-4">
+      <hr className="w-48 lg:h-2 h-1 rounded-xl bg-[#252525]" />
+      <div className="mt-[50px] grid lg:grid-cols-4 grid-cols-2 gap-4 p-2 lg:p-0">
         {data_product.map((item, i) => {
           return (
             <Items
