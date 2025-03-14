@@ -102,7 +102,7 @@ let all_product = [
   },
   {
     id: 9,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Pink Floral Print, Long Sleeves, Flowy and Feminine Dress",
     category: "women",
     image: p9_img,
     new_price: 110.0,
@@ -110,7 +110,7 @@ let all_product = [
   },
   {
     id: 10,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Burgundy Casual Chic Hoodie, Paired With Black Leather-style bottoms",
     category: "women",
     image: p10_img,
     new_price: 105.0,
@@ -118,7 +118,7 @@ let all_product = [
   },
   {
     id: 11,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "MInimalistic Black Sleeveless Crop Top, Ideal for Casual or Activewear",
     category: "women",
     image: p11_img,
     new_price: 65.0,
@@ -126,7 +126,7 @@ let all_product = [
   },
   {
     id: 12,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Fitted Navy Full-Sleeve Top, Paired With High-Waisted Camel Trousers for a sophisticated look",
     category: "women",
     image: p12_img,
     new_price: 70.0,
@@ -230,7 +230,7 @@ let all_product = [
   },
   {
     id: 25,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Bright Lemon Print Hoodie",
     category: "kid",
     image: p25_img,
     new_price: 48.0,
@@ -238,7 +238,7 @@ let all_product = [
   },
   {
     id: 26,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Skater Style Black Hoodie",
     category: "kid",
     image: p26_img,
     new_price: 64.0,
@@ -246,7 +246,7 @@ let all_product = [
   },
   {
     id: 27,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Sporty Navy and Yellow Hoodie",
     category: "kid",
     image: p27_img,
     new_price: 70.0,
@@ -254,7 +254,7 @@ let all_product = [
   },
   {
     id: 28,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Happy Dino Embroidered Sweatshirt",
     category: "kid",
     image: p28_img,
     new_price: 55.0,
@@ -262,7 +262,7 @@ let all_product = [
   },
   {
     id: 29,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Colorblock Zip-Up Track Jacket",
     category: "kid",
     image: p29_img,
     new_price: 56.0,
@@ -270,7 +270,7 @@ let all_product = [
   },
   {
     id: 30,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Quilted Hooded Winter Jacket",
     category: "kid",
     image: p30_img,
     new_price: 66.0,
@@ -278,7 +278,7 @@ let all_product = [
   },
   {
     id: 31,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Denim Bomber Jacket with Patch",
     category: "kid",
     image: p31_img,
     new_price: 79.0,
@@ -286,7 +286,7 @@ let all_product = [
   },
   {
     id: 32,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Casual Blue Crew Neck Sweatshirt",
     category: "kid",
     image: p32_img,
     new_price: 89.0,
