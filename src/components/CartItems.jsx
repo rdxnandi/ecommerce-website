@@ -15,7 +15,7 @@ function CartItems() {
 
   return (
     <div className="mx-4 my-10 lg:mx-[170px] lg:my-[100px]">
-      <div className="hidden lg:grid grid-cols-custom-layout items-center gap-16 px-0 py-5 text-[#454545] text-xm font-semibold">
+      <div className="hidden lg:grid md:grid grid-cols-custom-layout items-center gap-16 px-0 py-5 text-[#454545] text-xm font-semibold">
         <p>Product</p>
         <p>Title</p>
         <p>Price</p>
@@ -29,24 +29,24 @@ function CartItems() {
         if (cartItem[e.id] > 0) {
           return (
             <div>
-              <div className="flex flex-col lg:grid lg:grid-cols-custom-layout items-center lg:gap-[75px] px-0 py-5 text-[#454545] font-semibold text-[17px]">
-                <img className="w-16 h-16 lg:w-[62px]" src={e.image} alt="" />
-                <p className="text-center">{e.name}</p>
-                <div className="flex items-center">
-                  <div className="flex gap-2 items-center">
-                    <p>${e.new_price.toFixed(2)}</p>
-                    <button className="w-12 h-10 lg:w-[64px] lg:h-[40px] border-2 border-[#ebebeb]">
-                      {cartItem[e.id]}
-                    </button>
-                    <p>${(e.new_price * cartItem[e.id]).toFixed(2)}</p>
-                  </div>
-                  <FaTrash
-                    onClick={() => {
-                      removeFromCart(e.id);
-                    }}
-                    className="w-[15px] mx-10 my-0 cursor-pointer"
-                  />
-                </div>
+              <div className="flex flex-col lg:grid md:grid lg:grid-cols-custom-layout md:grid-cols-custom-layout items-center lg:gap-[75px] md:gap-[50px] gap-2 px-0 py-5 text-[#454545] font-semibold text-[17px]">
+                <img
+                  className="w-16 h-16 lg:w-[62px] md:w-[62px]"
+                  src={e.image}
+                  alt=""
+                />
+                <p className="text-center lg:text-start">{e.name}</p>
+                <p>${e.new_price.toFixed(2)}</p>
+                <button className="w-12 h-10 lg:w-[64px] lg:h-[40px] border-2 border-[#ebebeb]">
+                  {cartItem[e.id]}
+                </button>
+                <p>${(e.new_price * cartItem[e.id]).toFixed(2)}</p>
+                <FaTrash
+                  onClick={() => {
+                    removeFromCart(e.id);
+                  }}
+                  className="w-[15px] mx-10 my-0 cursor-pointer"
+                />
               </div>
             </div>
           );
@@ -54,8 +54,8 @@ function CartItems() {
         return null;
       })}
 
-      <div className="flex mx-0 my-24 flex-col lg:flex-row">
-        <div className="lg:flex-1 flex flex-col lg:mt-48 gap-10">
+      <div className="flex mx-0 my-24 flex-col lg:flex-row md:flex-row">
+        <div className="lg:flex-1 md:flex-1 flex flex-col lg:mt-48 md:mt-48 gap-10">
           <h1>Cart Totals</h1>
           <div>
             <div className="flex justify-between px-0 py-4">
@@ -84,17 +84,17 @@ function CartItems() {
           </button>
         </div>
 
-        <div className="lg:flex-1 text-xm mt-16 lg:mt-0">
+        <div className="lg:flex-1 md:flex-1 text-xm mt-16 lg:mt-0 md:mt-0">
           <p className="text-[#555]">If you have a promo code, Enter it here</p>
-          <div className="flex flex-col gap-4 lg:gap-0 lg:flex-row lg:w-[504px] mt-4 lg:pl-5 lg:bg-[#eaeaea]">
+          <div className="flex flex-col gap-4 lg:gap-0 md:gap-0 lg:flex-row md:flex-row lg:w-[504px] md:w-[404px] mt-4 lg:pl-5 md:pl-5 lg:bg-[#eaeaea]">
             <input
               type="text"
               value={promoCode}
               onChange={handlePromoChange}
               placeholder="promo code"
-              className="outline-hidden text-xm w-full lg:w-[330px] h-[50px] bg-transparent text-gray-500 border"
+              className="outline-hidden text-xm w-full lg:w-[330px] h-[50px] bg-transparent text-gray-500 border p-2"
             />
-            <button className="lg:w-40 lg:h-14 w-20 h-10 text-xm bg-black text-white m-auto cursor-pointer">
+            <button className="lg:w-40 lg:h-14 md:h-12 w-20 h-10 text-xm bg-black text-white m-auto cursor-pointer">
               Submit
             </button>
           </div>

@@ -20,7 +20,7 @@ function ShopCategory(props) {
         </p>
         <SortButton />
       </div>
-      <div className="lg:mx-36 my-5 grid grid-cols-2 lg:grid-cols-4 lg:gap-20 gap-5 p-2 lg:p-0">
+      <div className="lg:mx-36 my-5 grid grid-cols-2 lg:grid-cols-4 md:grid-cols-4 lg:gap-20 gap-5 p-2 lg:p-0">
         {all_product.map((item, i) => {
           if (props.category === item.category) {
             return (

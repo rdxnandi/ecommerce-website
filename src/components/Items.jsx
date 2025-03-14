@@ -29,7 +29,7 @@ function Items(props) {
 
       <p className="mx-0 my-1 text-sm">{props.name}</p>
 
-      <div className="flex items-center lg:gap-12 gap-2">
+      <div className="flex items-center lg:gap-12 md:gap-7 gap-2">
         <div className="flex gap-2">
           <div className="text-[#374151] lg:text-xl font-semibold">
             ${props.new_price}

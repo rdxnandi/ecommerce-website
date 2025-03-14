@@ -40,14 +40,14 @@ function Header() {
   return (
     <header className="shadow-md">
       <Container>
-        <nav className="flex lg:justify-around gap-17">
+        <nav className="flex lg:justify-around md:justify-between gap-17">
           <div>
             <Link to="/" className="flex items-center">
               <img className="h-[100px]" src={Logo} alt={Logo} />
               <p className="text-[#171717] text-lg lg:text-4xl">Stylekart</p>
             </Link>
           </div>
-          <ul className="fixed bottom-0 left-0 z-50 bg-white w-full h-12 justify-center lg:bg-transparent lg:justify-start lg:h-auto lg:static lg:w-auto text-[#626262] text-xl flex gap-5 lg:gap-10">
+          <ul className="fixed bottom-0 left-0 z-50 bg-white w-full h-12 justify-center lg:bg-transparent lg:justify-start lg:h-auto lg:static lg:w-auto text-[#626262] text-xl flex gap-5 lg:gap-10 md:gap-7">
             {navItems.map((item) =>
               item.active ? (
                 <li
@@ -68,7 +68,7 @@ function Header() {
               ) : null
             )}
           </ul>
-          <div className="flex items-center lg:gap-11 relative">
+          <div className="flex items-center lg:gap-11 md:gap-5 relative">
             <div className="relative">
               <button
                 className="p-2 text-gray-600 flex items-center gap-2 cursor-pointer"
@@ -100,7 +100,7 @@ function Header() {
             <Link to="/cart">
               <img src={cart_icon} alt={cart_icon} className="w-6" />
             </Link>
-            <div className="w-5 h-5 flex justify-center items-center lg:-mt-8 lg:-ml-14 -mt-6 -ml-1 rounded-xl lg:text-xs text-[12px] bg-red-500 text-white">
+            <div className="w-5 h-5 flex justify-center items-center lg:-mt-8 lg:-ml-14 md:-ml-6 -mt-6 -ml-1 rounded-xl lg:text-xs text-[12px] bg-red-500 text-white">
               {getTotalCartItems()}
             </div>
           </div>

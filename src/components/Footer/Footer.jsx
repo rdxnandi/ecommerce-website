@@ -11,7 +11,7 @@ function Footer() {
           Sytlekart
         </p>
       </div>
-      <ul className="flex gap-[10px] lg:gap-[50px] text-[#252525] text-xm lg:text-xl">
+      <ul className="flex gap-[10px] lg:gap-[50px] md:gap-[50px] text-[#252525] text-xm lg:text-xl">
         <li className="cursor-pointer">Company</li>
         <li className="cursor-pointer">Products</li>
         <li className="cursor-pointer">Offices</li>
@@ -29,9 +29,9 @@ function Footer() {
           <FaWhatsapp />
         </div>
       </div>
-      <div className="flex flex-col items-center gap-[30px] w-full mb-[30px] text-[#1a1a1a] text-xm lg:text-xl">
+      <div className="flex flex-col items-center gap-[30px] w-full lg:mb-0 mb-[50px] text-[#1a1a1a] text-xm lg:text-xl">
         <hr className="w-[80%] rounded-[10px] h-[3px] bg-[#c7c7c7]" />
-        <p className="text-center">
+        <p className="text-center text-[14px]">
           Copyright © 2025 Stylekart. All Rights Reserved
         </p>
       </div>
