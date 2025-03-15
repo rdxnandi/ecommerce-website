@@ -10,14 +10,14 @@ import p8_img from "./product_28.png";
 let new_collections = [
   {
     id: 12,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Fitted Navy Full-Sleeve Top, Paired With High-Waisted Camel Trousers for a sophisticated look",
     image: p1_img,
     new_price: 50.0,
     old_price: 80.5,
   },
   {
     id: 35,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Athleisure Black with Red Stripes Zip-Up Jacket",
     image: p2_img,
     new_price: 85.0,
     old_price: 120.5,
@@ -31,7 +31,7 @@ let new_collections = [
   },
   {
     id: 8,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Black and white floral wrap-style top, with puffed sleeves for a casual yet elegant look",
     image: p4_img,
     new_price: 100.0,
     old_price: 150.0,
@@ -45,7 +45,7 @@ let new_collections = [
   },
   {
     id: 2,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Soft Pink, Fitted, Square-neck Crop Top",
     image: p6_img,
     new_price: 85.0,
     old_price: 120.5,
@@ -59,7 +59,7 @@ let new_collections = [
   },
   {
     id: 28,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Happy Dino Embroidered Sweatshirt",
     image: p8_img,
     new_price: 100.0,
     old_price: 150.0,

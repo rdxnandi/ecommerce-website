@@ -294,7 +294,7 @@ let all_product = [
   },
   {
     id: 33,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Casual Navy Sweatshirt",
     category: "kid",
     image: p33_img,
     new_price: 119.0,
@@ -302,7 +302,7 @@ let all_product = [
   },
   {
     id: 34,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Padded Dark Blue Windbreaker Jacket",
     category: "kid",
     image: p34_img,
     new_price: 67.0,
@@ -310,7 +310,7 @@ let all_product = [
   },
   {
     id: 35,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Athleisure Black with Red Stripes Zip-Up Jacket",
     category: "kid",
     image: p35_img,
     new_price: 76.0,
@@ -318,7 +318,7 @@ let all_product = [
   },
   {
     id: 36,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Boys Sporty Black and White Tracksuit",
     category: "kid",
     image: p36_img,
     new_price: 82.0,
