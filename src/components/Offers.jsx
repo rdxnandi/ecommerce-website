@@ -18,7 +18,7 @@ function Offers() {
           Check Now
         </button>
       </div>
-      <div className="flex-1 lg:flex md:flex hidden items-center justify-end pt-[50px]">
+      <div className="flex-1 lg:flex md:flex sm:flex hidden items-center justify-end pt-[50px]">
         <img src={exclusive_image} alt={exclusive_image} />
       </div>
     </div>

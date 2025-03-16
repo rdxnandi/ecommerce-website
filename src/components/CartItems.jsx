@@ -15,7 +15,7 @@ function CartItems() {
 
   return (
     <div className="mx-4 my-10 lg:mx-[170px] lg:my-[100px]">
-      <div className="hidden lg:grid md:grid grid-cols-custom-layout items-center gap-16 px-0 py-5 text-[#454545] text-xm font-semibold">
+      <div className="hidden lg:grid md:grid sm:grid grid-cols-custom-layout items-center gap-16 px-0 py-5 text-[#454545] text-xm font-semibold">
         <p>Product</p>
         <p>Title</p>
         <p>Price</p>
@@ -29,13 +29,15 @@ function CartItems() {
         if (cartItem[e.id] > 0) {
           return (
             <div>
-              <div className="flex flex-col lg:grid md:grid lg:grid-cols-custom-layout md:grid-cols-custom-layout items-center lg:gap-[75px] md:gap-[50px] gap-2 px-0 py-5 text-[#454545] font-semibold text-[17px]">
+              <div className="flex flex-col lg:grid md:grid sm:grid lg:grid-cols-custom-layout md:grid-cols-custom-layout sm:grid-cols-custom-layout items-center lg:gap-[75px] md:gap-[50px] gap-2 px-0 py-5 text-[#454545] font-semibold text-[17px]">
                 <img
                   className="w-16 h-16 lg:w-[62px] md:w-[62px]"
                   src={e.image}
                   alt=""
                 />
-                <p className="text-center lg:text-start">{e.name}</p>
+                <p className="text-center lg:text-start sm:text-start">
+                  {e.name}
+                </p>
                 <p>${e.new_price.toFixed(2)}</p>
                 <button className="w-12 h-10 lg:w-[64px] lg:h-[40px] border-2 border-[#ebebeb]">
                   {cartItem[e.id]}
@@ -55,7 +57,7 @@ function CartItems() {
       })}
 
       <div className="flex mx-0 my-24 flex-col lg:flex-row md:flex-row">
-        <div className="lg:flex-1 md:flex-1 flex flex-col lg:mt-48 md:mt-48 gap-10">
+        <div className="lg:flex-1 md:flex-1 sm:flex-1 flex flex-col lg:mt-48 md:mt-48 gap-10">
           <h1>Cart Totals</h1>
           <div>
             <div className="flex justify-between px-0 py-4">
