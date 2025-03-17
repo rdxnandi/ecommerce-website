@@ -36,7 +36,7 @@ function SignUp() {
   };
 
   return (
-    <div className="w-full min-h-[80vh] bg-[#fce3fe] py-24">
+    <section className="w-full min-h-[80vh] bg-[#fce3fe] py-24">
       <div className="lg:w-[580px] md:w-[500px] sm:w-[500px] bg-white m-auto px-10 lg:px-14 py-10 rounded-lg">
         <h1 className="text-center my-5 text-2xl font-semibold">Sign Up</h1>
         <form onSubmit={handleSubmit(create)}>
@@ -114,7 +114,7 @@ function SignUp() {
           </span>
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

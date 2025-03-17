@@ -16,12 +16,12 @@ function Product() {
   }
 
   return (
-    <div>
+    <section>
       <Breadcrum product={product} />
       <ProductDisplay product={product} />
       <DescriptionBox />
       <RelatedProducts />
-    </div>
+    </section>
   );
 }
 

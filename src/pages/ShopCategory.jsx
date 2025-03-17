@@ -7,7 +7,7 @@ function ShopCategory(props) {
   const { all_product } = useContext(ShopContext);
 
   return (
-    <div>
+    <section>
       <img
         className="block mx-auto my-7 lg:w-10/12 w-full"
         src={props.banner}
@@ -41,7 +41,7 @@ function ShopCategory(props) {
       <div className="flex justify-center items-center mx-auto my-36 w-56 h-14 rounded-full bg-[#ededed] text-[#787878] text-xl cursor-pointer">
         Explore More
       </div>
-    </div>
+    </section>
   );
 }
 

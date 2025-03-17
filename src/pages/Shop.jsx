@@ -7,13 +7,13 @@ import NewsLetter from "../components/NewsLetter.jsx";
 
 function Shop() {
   return (
-    <div>
+    <section>
       <Hero />
       <Popular />
       <Offers />
       <NewCollections />
       <NewsLetter />
-    </div>
+    </section>
   );
 }
 
