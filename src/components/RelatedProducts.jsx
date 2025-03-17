@@ -4,7 +4,7 @@ import Items from "./Items";
 
 function RelatedProducts() {
   return (
-    <div className="flex flex-col items-center gap-2 min-h-[90vh]">
+    <div className="flex flex-col items-center gap-2 min-h-[90vh] sm:min-h-auto">
       <h1 className="text-[#171717] lg:text-5xl text-3xl font-semibold">
         Related Products
       </h1>

@@ -2,7 +2,7 @@ import React from "react";
 
 function NewsLetter() {
   return (
-    <div className="lg:w-4/6 w-full min-h-[40vh] flex flex-col items-center justify-center m-auto px-12 lg:px-32 py-0 mb-36 bg-custom-gradient gap-7">
+    <div className="lg:w-4/6 w-full min-h-[40vh] sm:min-h-auto sm:py-5 flex flex-col items-center justify-center m-auto px-12 lg:px-32 py-0 mb-36 bg-custom-gradient gap-7">
       <h1 className="text-[#454545] text-3xl lg:text-5xl">
         Get Exclusive Offers On Your Email
       </h1>

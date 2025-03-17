@@ -4,7 +4,7 @@ import hand_icon from "./assets/hand_icon.png";
 
 function Hero() {
   return (
-    <div className="min-h-screen bg-custom-gradient lg:flex">
+    <div className="min-h-screen sm:min-h-auto bg-custom-gradient lg:flex">
       <div className="flex flex-col justify-center lg:gap-5 p-10 lg:p-44">
         <h2 className="text-[#090909] text-3xl mb-7 lg:mb-0 lg:text-2xl font-semibold">
           NEW ARRIVALS ONLY

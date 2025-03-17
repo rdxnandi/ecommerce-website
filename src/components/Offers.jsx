@@ -3,7 +3,7 @@ import exclusive_image from "./assets/exclusive_image.png";
 
 function Offers() {
   return (
-    <div className="lg:w-4/6 w-full min-h-[60vh] flex m-auto px-20 lg:px-36 py-0 mb-36 bg-custom-gradient">
+    <div className="lg:w-4/6 w-full min-h-[60vh] sm:min-h-auto flex m-auto px-20 lg:px-36 py-0 mb-36 bg-custom-gradient">
       <div className="flex-1 flex flex-col justify-center">
         <h1 className="text-[#171717] text-5xl lg:text-7xl md:text-6xl font-semibold">
           Exclusive
