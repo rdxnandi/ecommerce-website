@@ -1,18 +1,33 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Logo from "../assets/logo.png";
 import cart_icon from "../assets/cart_icon.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { ShopContext } from "../../context/ShopContext";
 import Container from "../Container/Container";
-import Logout from "../Header/Logout";
 import { useSelector } from "react-redux";
-import { FaChevronDown, FaUser } from "react-icons/fa";
+import { FaChevronUp, FaChevronDown, FaUser } from "react-icons/fa";
+import PersonalInfo from "./PersonalInfo";
 
 function Header() {
   const { getTotalCartItems } = useContext(ShopContext);
   const navigate = useNavigate();
   const authStatus = useSelector((state) => state.auth.status);
+  const userData = useSelector((state) => state.auth.userData);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const drowdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (drowdownRef.current && !drowdownRef.current.contains(e.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const navItems = [
     {
@@ -69,13 +84,19 @@ function Header() {
             )}
           </ul>
           <div className="flex items-center lg:gap-11 md:gap-5 sm:gap-5 relative">
-            <div className="relative">
+            <div className="relative" ref={drowdownRef}>
               <button
                 className="p-2 text-gray-600 flex items-center gap-2 cursor-pointer"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
-                <FaUser className="border border-gray-500 rounded-full w-6 h-6 p-1" />
-                <FaChevronDown />
+                {!authStatus ? (
+                  <FaUser className="border border-gray-500 rounded-full w-6 h-6 p-1" />
+                ) : (
+                  <span className="border border-gray-500 rounded-full w-6 h-6 flex items-center justify-center text-gray-600 font-semibold">
+                    {userData?.name?.charAt(0)}
+                  </span>
+                )}
+                {isDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
               </button>
 
               {isDropdownOpen && (
@@ -90,7 +111,7 @@ function Header() {
                   )}
                   {authStatus && (
                     <div>
-                      <Logout />
+                      <PersonalInfo />
                     </div>
                   )}
                 </div>

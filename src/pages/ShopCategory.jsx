@@ -38,7 +38,7 @@ function ShopCategory(props) {
           }
         })}
       </div>
-      <div className="flex justify-center items-center mx-auto my-36 w-56 h-14 rounded-full bg-[#ededed] text-[#787878] text-xl cursor-pointer">
+      <div className="flex justify-center items-center mx-auto my-36 w-56 h-14 rounded-full bg-[#ededed] text-[#787878] text-xl cursor-not-allowed">
         Explore More
       </div>
     </section>

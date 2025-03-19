@@ -7,7 +7,7 @@ Stylekart is a modern e-commerce website built with React and Tailwind CSS.
 ## Features
 
 - Cart & Checkout: Smooth shopping cart functionality.
-- Responsive Design: Fully mobile-friendly UI.
+- Responsive Design: Optimized for all devices.
 
 ## Tech Stack
 

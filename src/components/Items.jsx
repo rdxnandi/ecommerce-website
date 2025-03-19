@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Heart } from "lucide-react";
+import { ShopContext } from "../context/ShopContext";
 
 function Items(props) {
-  const [liked, setLiked] = useState(false);
+  const { handleLike, likedItems } = useContext(ShopContext);
   const navigate = useNavigate();
-
-  const handleLike = (e) => {
-    e.preventDefault();
-    setLiked(!liked);
-  };
 
   const handleImageClick = (e) => {
     e.preventDefault();
@@ -41,9 +37,9 @@ function Items(props) {
         <div>
           <button
             className="text-gray-300 lg:text-4xl cursor-pointer"
-            onClick={handleLike}
+            onClick={() => handleLike(props.id)}
           >
-            {liked ? (
+            {likedItems[props.id] ? (
               <Heart className="text-white fill-red-500" size={18} />
             ) : (
               <Heart className="text-gray-400" size={18} />

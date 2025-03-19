@@ -76,7 +76,7 @@ function SignIn() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="text-gray-500 w-[50px] flex items-center justify-center"
+                  className="text-gray-500 w-[50px] flex items-center justify-center cursor-pointer"
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
@@ -86,6 +86,7 @@ function SignIn() {
               <p className="text-red-500 text-sm">{errors.password.message}</p>
             )}
           </div>
+
           <button
             type="submit"
             className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl cursor-pointer hover:bg-red-400 active:bg-red-500"

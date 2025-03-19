@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import all_product from "../components/assets/all_product";
 
 export const ShopContext = createContext(null);
@@ -12,7 +12,25 @@ const getDefaultCart = () => {
 };
 
 const ShopContextProvider = (props) => {
-  const [cartItem, setCartItem] = useState(getDefaultCart());
+  const [cartItem, setCartItem] = useState(() => {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : getDefaultCart();
+  });
+
+  const [likedItems, setLikedItems] = useState(() => {
+    const savedLiked = localStorage.getItem("liked");
+    return savedLiked ? JSON.parse(savedLiked) : getDefaultCart();
+  });
+
+  const [sortedProduct, setSortedProduct] = useState(all_product);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItem));
+  }, [cartItem]);
+
+  useEffect(() => {
+    localStorage.setItem("liked", JSON.stringify(likedItems));
+  }, [likedItems]);
 
   const addToCart = (itemId) => {
     setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
@@ -20,6 +38,20 @@ const ShopContextProvider = (props) => {
 
   const removeFromCart = (itemId) => {
     setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+  };
+
+  const sortProducts = (criteria) => {
+    let sorted = [...all_product];
+    if (criteria === "price-low-high") {
+      sorted.sort((a, b) => a.new_price - b.new_price);
+    } else if (criteria === "price-high-low") {
+      sorted.sort((a, b) => b.new_price - a.new_price);
+    }
+    setSortedProduct(sorted);
+  };
+
+  const handleLike = (itemId) => {
+    setLikedItems((prev) => ({ ...prev, [itemId]: !prev[itemId] }));
   };
 
   const getTotalCartAmount = () => {
@@ -48,10 +80,13 @@ const ShopContextProvider = (props) => {
   const contextValue = {
     getTotalCartItems,
     getTotalCartAmount,
-    all_product,
+    all_product: sortedProduct,
     cartItem,
+    likedItems,
     addToCart,
     removeFromCart,
+    sortProducts,
+    handleLike,
   };
 
   return (

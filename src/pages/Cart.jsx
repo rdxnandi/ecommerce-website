@@ -3,7 +3,7 @@ import CartItems from "../components/CartItems";
 
 function Cart() {
   return (
-    <section className="min-h-screen sm:min-h-auto">
+    <section>
       <CartItems />
     </section>
   );

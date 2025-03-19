@@ -89,7 +89,7 @@ function SignUp() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="text-gray-500 w-[50px] flex items-center justify-center"
+                  className="text-gray-500 w-[50px] flex items-center justify-center cursor-pointer"
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>

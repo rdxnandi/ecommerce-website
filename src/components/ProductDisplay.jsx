@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import star_icon from "./assets/star_icon.png";
 import star_dull_icon from "./assets/star_dull_icon.png";
 import { ShopContext } from "../context/ShopContext";
@@ -6,6 +6,13 @@ import { ShopContext } from "../context/ShopContext";
 function ProductDisplay(props) {
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
+  const [isAdded, setIsAdded] = useState(false);
+
+  function handleAddToCard() {
+    addToCart(product.id);
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 500);
+  }
 
   return (
     <div className="flex flex-col lg:flex-row md:flex-row sm:flex-row lg:mx-40 my-0 px-4">
@@ -64,11 +71,9 @@ function ProductDisplay(props) {
         </div>
         <button
           className="px-10 py-4 w-52 text-xm font-semibold text-white bg-[#ff4141] mb-10 cursor-pointer"
-          onClick={() => {
-            addToCart(product.id);
-          }}
+          onClick={handleAddToCard}
         >
-          ADD TO CART
+          {isAdded ? "ADDED" : "ADD TO CART"}
         </button>
         <p className="mt-2">
           <span className="font-semibold">Category :</span>Women , T-Shirt, Crop
