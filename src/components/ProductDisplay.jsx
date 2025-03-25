@@ -7,6 +7,7 @@ function ProductDisplay(props) {
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
   const [isAdded, setIsAdded] = useState(false);
+  const [selectedSize, setSelectedSize] = useState(null);
 
   function handleAddToCard() {
     addToCart(product.id);
@@ -18,10 +19,26 @@ function ProductDisplay(props) {
     <div className="flex flex-col lg:flex-row md:flex-row sm:flex-row lg:mx-40 my-0 px-4">
       <div className="flex gap-4">
         <div className="flex flex-col gap-4">
-          <img className="w-36 h-[88px]" src={product.image} alt="" />
-          <img className="w-36 h-[88px]" src={product.image} alt="" />
-          <img className="w-36 h-[88px]" src={product.image} alt="" />
-          <img className="w-36 h-[88px]" src={product.image} alt="" />
+          <img
+            className="w-36 h-[88px] hover:border-2 hover:border-[#ff4141] cursor-pointer"
+            src={product.image}
+            alt=""
+          />
+          <img
+            className="w-36 h-[88px] hover:border-2 hover:border-[#ff4141] cursor-pointer"
+            src={product.image}
+            alt=""
+          />
+          <img
+            className="w-36 h-[88px] hover:border-2 hover:border-[#ff4141] cursor-pointer"
+            src={product.image}
+            alt=""
+          />
+          <img
+            className="w-36 h-[88px] hover:border-2 hover:border-[#ff4141] cursor-pointer"
+            src={product.image}
+            alt=""
+          />
         </div>
         <div>
           <img className="w-[586px] h-[400px]" src={product.image} alt="" />
@@ -52,21 +69,17 @@ function ProductDisplay(props) {
             Select Size
           </h1>
           <div className="flex mx-0 my-7 gap-5">
-            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-xs cursor-pointer">
-              S
-            </div>
-            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-xs cursor-pointer">
-              M
-            </div>
-            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-xs cursor-pointer">
-              L
-            </div>
-            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-xs cursor-pointer">
-              Xl
-            </div>
-            <div className="px-3 py-2 bg-[#fbfbfb] border border-[#ebebeb] rounded-xs cursor-pointer">
-              XXl
-            </div>
+            {["S", "M", "L", "XL", "XXL"].map((size) => (
+              <button
+                key={size}
+                className={`px-3 py-2 bg-[#fbfbfb] border-2 border-[#ebebeb] rounded-xs cursor-pointer hover:border-[#ff4141] ${
+                  selectedSize === size ? "border-[#ff4141]" : ""
+                }`}
+                onClick={() => setSelectedSize(size)}
+              >
+                {size}
+              </button>
+            ))}
           </div>
         </div>
         <button

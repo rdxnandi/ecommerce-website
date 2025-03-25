@@ -17,12 +17,13 @@ function SignUp() {
     setError,
   } = useForm({ mode: "onChange" });
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const password = watch("password");
 
   const create = async (data) => {
     setError("");
-
+    setIsLoading(true);
     try {
       const session = await authService.createAccount(data);
       if (session) {
@@ -32,6 +33,8 @@ function SignUp() {
       }
     } catch (error) {
       setError(error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -102,9 +105,10 @@ function SignUp() {
 
           <button
             type="submit"
-            className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl uppercase cursor-pointer hover:bg-red-400 active:bg-red-500"
+            className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl cursor-pointer hover:bg-red-400 active:bg-red-500"
+            disabled={isLoading}
           >
-            Sign Up
+            {isLoading ? "Creating Account..." : "Sign Up"}
           </button>
         </form>
         <p className="mt-5 text-[#5c5c5c] text-xm lg:text-xl">

@@ -17,11 +17,13 @@ function SignIn() {
     setError,
   } = useForm({ mode: "onChange" });
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const password = watch("password");
 
   const signin = async (data) => {
     setError("");
+    setIsLoading(true);
     try {
       const session = await authService.login(data);
       if (session) {
@@ -31,6 +33,8 @@ function SignIn() {
       }
     } catch (error) {
       setError(error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -90,8 +94,9 @@ function SignIn() {
           <button
             type="submit"
             className="lg:w-full w-[100px] h-12 rounded-md text-white bg-[#ff4141] mt-[30px] text-xl lg:text-2xl cursor-pointer hover:bg-red-400 active:bg-red-500"
+            disabled={isLoading}
           >
-            Sign in
+            {isLoading ? "Signing In..." : "Sign In"}
           </button>
         </form>
         <p className="mt-5 text-[#5c5c5c] text-xm lg:text-xl">
